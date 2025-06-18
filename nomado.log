@@ -1,0 +1,6 @@
+ERROR: 2025/06/13 10:43:19 logger.go:35: Failed to query properties: pq: relation "properties" does not exist
+ERROR: 2025/06/13 10:43:19 logger.go:35: Failed to get top properties : pq: relation "properties" does not exist
+ERROR: 2025/06/13 11:02:58 logger.go:35: Failed to query properties: pq: relation "properties" does not exist
+ERROR: 2025/06/13 11:02:58 logger.go:35: Failed to get top properties : pq: relation "properties" does not exist
+ERROR: 2025/06/17 11:54:30 logger.go:35: Failed to query property by ID: pq: invalid input syntax for type integer: ""
+ERROR: 2025/06/17 11:54:30 logger.go:40: Failed to get property by ID: pq: invalid input syntax for type integer: ""

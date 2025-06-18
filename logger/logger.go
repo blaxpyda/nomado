@@ -35,6 +35,11 @@ func (l *Logger) Error(msg string, err error) {
 	l.errorLogger.Printf("%s: %v", msg, err)
 }
 
+// Errorf logs formatted error messages to file
+func (l *Logger) Errorf(format string, args ...interface{}) {
+	l.errorLogger.Printf(format, args...)
+}
+
 // Close closes the log file
 func (l *Logger) Close() {
 	l.file.Close()

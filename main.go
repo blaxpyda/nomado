@@ -18,7 +18,6 @@ func initializeLogger() *logger.Logger {
 	if err != nil {
 		log.Fatalf("Failed to initialize logger: %v", err)
 	}
-	defer logInstance.Close()
 	return logInstance
 }
 
@@ -26,6 +25,7 @@ func main() {
 
 	//Initialize the logger
 	logInstance := initializeLogger()
+	defer logInstance.Close()
 
 	// Environment setup
 	if err := godotenv.Load(); err != nil {
@@ -52,14 +52,20 @@ func main() {
 	}
 
 	// Property handler initialization
-	propertyHandler := handlers.PropertyHandler{}
+	propertyHandler := &handlers.PropertyHandler{}
 	propertyHandler.Logger = logInstance
 	propertyHandler.Storage = propertyRepository
 
 	// Serve API endpoints
 	http.HandleFunc("/api/v1/properties/top", propertyHandler.GetTopProperties)
 	http.HandleFunc("/api/v1/properties/random", propertyHandler.GetRandomProperties)
+	http.HandleFunc("/api/v1/properties/search", propertyHandler.SearchPropertiesByName)
+	http.HandleFunc("/api/v1/properties", propertyHandler.GetPropertyByID)
+	http.HandleFunc("/api/v1/properties/location", propertyHandler.GetPropertiesByLocation)
+	http.HandleFunc("/api/v1/properties/price", propertyHandler.GetPropertiesByPriceRange)
+	http.HandleFunc("/api/v1/properties/type", propertyHandler.GetPropertiesByType)
 
+	//start server
 	const addr = ":8080"
 	err = http.ListenAndServe(addr, nil)
 	if err != nil {

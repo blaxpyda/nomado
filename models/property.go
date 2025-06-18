@@ -4,6 +4,7 @@ type Property struct {
 	ID          string `json:"id"`
 	Name        string `json:"name"`
 	Description string `json:"description"`
+	ImageURL    string `json:"image_url"`
 	TransactionType string `json:"transaction_type"`
 	Price       float64 `json:"price"`
 	Status      string `json:"status"`
