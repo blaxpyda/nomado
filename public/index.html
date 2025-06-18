@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nomado</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="manifest" href="app.webmanifest">
+    <link rel="icon" href="/assets/icons/icon.png">
+    <script src="app.js" type="module" defer></script>
+</head>
+<body>
+    <header>
+        <h1><img src="/assets/icons/logo.png" height="35" alt="Nomado Logo"></h1>
+        <nav>
+            <ul>
+                <li><a class="navlink" href="/">Houses</a></li>
+                <li><a class="navlink" href="/account/featured">Featured</a></li>
+                <li><a class="navlink" href="/account/watchlist">Watchlist</a></li>
+                <li><a class="navlink" href="/account">My Account</a></li>
+
+            </ul>
+        </nav>
+        <div>
+            <form onsubmit="app.search(event)">
+                <input type="search" placeholder="Search for houses..." aria-label="Search">
+            </form>
+        </div>
+    </header>
+    <main>
+
+    </main>
+    <footer>
+        <p>&copy; 2023 Nomado. All rights reserved.</p>
+        <p>Made with ❤️ by <a href="https://github.com/blaxpyda">Diesel</a></p>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,15 @@
+{
+    "name": "Nomado",
+    "short_name": "Nomado",
+    "theme_color": "#ffffff",
+    "display": "browser",
+    "background_color": "#ffffff",
+    "description": "Nomado is a web application designed to help you manage your travel itineraries and bookings efficiently.",
+    "icons": [
+        {
+            "src": "assets/icons/icon.png",
+            "sizes": "1024x1024",
+            "type": "image/png"
+        }
+    ]
+}

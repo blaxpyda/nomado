@@ -65,6 +65,9 @@ func main() {
 	http.HandleFunc("/api/v1/properties/price", propertyHandler.GetPropertiesByPriceRange)
 	http.HandleFunc("/api/v1/properties/type", propertyHandler.GetPropertiesByType)
 
+	// Serve static files
+	http.Handle("/", http.FileServer(http.Dir("public")))
+
 	//start server
 	const addr = ":8080"
 	err = http.ListenAndServe(addr, nil)
